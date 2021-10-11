@@ -136,7 +136,7 @@ scp ubuntu:/home/ubuntu/k8/download-test.txt mine.txt
 cat ~/.ssh/id_rsa.pub
 ```
 
-- Paste `public key` to to SSH server (/home/ubuntu/.ssh/authorized_keys)
+- Paste `public key` to SSH server (/home/ubuntu/.ssh/authorized_keys)
 
 ![r14](./img/14.png)
 
