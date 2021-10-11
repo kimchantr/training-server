@@ -87,6 +87,19 @@ sudo chmod 754 example.txt
 
 ![r4](./img/4.png)
 
+- Login vào user `kctrC` và thay đổi file `example.txt`
+  - Bởi vì user `kctrnC` thuộc `group_2`
+  - `group_2` chỉ có thể read và execute
+  - Nên khi thay đổi content của file, nó thực chất sẽ không ghi vào
+
+> Thay đổi ở user-C
+
+![r12](./img/12.png)
+
+> Content của `example.txt` ở user root, nơi tạo ra file
+
+![r13](./img/13.png)
+
 ## 4. Upload file to server
 
 - Connect server
@@ -125,9 +138,12 @@ cat ~/.ssh/id_rsa.pub
 
 - Paste `public key` to to SSH server (/home/ubuntu/.ssh/authorized_keys)
 
+![r14](./img/14.png)
+
 - Config `private key` for SSH client
 
 ![r10](./img/10.png)
 
-> Result
-> ![r11](./img/11.png)
+> Result (ssh to server without password)
+
+![r11](./img/11.png)
