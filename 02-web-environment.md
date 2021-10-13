@@ -200,3 +200,91 @@ sudo systemctl reload nginx
 ![p12](./img2/12.png)
 
 ![p13](./img2/13.png)
+
+## 4. Làm một virtual host ở máy
+
+- B1. Tạo thư mục cho trang web
+
+```bash
+sudo mkdir -p /var/www/demo
+```
+
+- B2. Tạo file `index.html` cho website `demo`
+
+```bash
+sudo vim /var/www/demo/index.html
+```
+
+```
+<html>
+ <head>
+ <title>demo.com</title>
+ </head>
+ <body>
+   <h1>Hello, world!</h1>
+ </body>
+</html>
+```
+
+- B3. Tạo tập tin cấu hình virtual host
+
+```bash
+sudo vim /etc/nginx/sites-available/demo.conf
+```
+
+```
+server {
+       listen 80;
+       listen [::]:80;
+       server_name demo.com;
+       root /var/www/demo;
+       index index.html;
+       location / {
+               try_files $uri $uri/ =404;
+       }
+}
+```
+
+- B4. Tạo file symbolic link tới thư mục /etc/nginx/sites-enabled/
+
+```bash
+sudo ln -s /etc/nginx/sites-available/demo.conf /etc/nginx/sites-enabled/demo.conf
+```
+
+- B5. Config `/etc/hosts`
+
+![p14](./img2/14.png)
+
+- B6. Reload lại service của Nginx Web Server để nhận 2 file configs
+
+```bash
+sudo systemctl reload nginx
+```
+
+> Result
+
+![p15](./img2/15.png)
+
+## 5. Tạo 1 authenticate basic khi vào trang
+
+- B1. Tạo user và password
+
+![p16](./img2/16.png)
+
+- B2. Cập nhật file nginx config `/etc/nginx/sites-available/demo.conf`
+
+![p19](./img2/19.png)
+
+- B3. Reload lại service của Nginx
+
+```bash
+sudo systemctl reload nginx
+```
+
+> Result
+
+![p17](./img2/17.png)
+
+![p18](./img2/18.png)
+
+## 6. Tạo ssl cho web server với nginx
