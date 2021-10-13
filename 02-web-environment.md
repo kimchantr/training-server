@@ -7,7 +7,7 @@
 3. Tạo virtual host trên nginx chạy nhiều web
 4. Làm một virtual host ở máy
 5. Tạo 1 authenticate basic khi vào trang
-6. Tạo ssl cho web server với nginx
+6. (optional) Tạo ssl cho web server với nginx
 
 ## 1. Cài đặt apache, nginx
 
@@ -287,4 +287,4 @@ sudo systemctl reload nginx
 
 ![p18](./img2/18.png)
 
-## 6. Tạo ssl cho web server với nginx
+## 6. (optional) Tạo ssl cho web server với nginx
