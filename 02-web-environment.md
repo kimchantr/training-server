@@ -288,3 +288,4 @@ sudo systemctl reload nginx
 ![p18](./img2/18.png)
 
 ## 6. (optional) Tạo ssl cho web server với nginx
+- Chưa làm được 😢
