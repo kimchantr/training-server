@@ -149,6 +149,37 @@ git commit -m 'Add file demo.html'
 git push -f origin develop
 ```
 
+### Sử dụng `git commit --amend`
+
+```bash
+# checkout sang nhánh develop và tạo file mới commit-amend-demo.txt
+git checkout develop
+vim commit-amend-demo.txt
+
+# add và commit file mới
+git add commit-amend-demo.txt
+git commit -m 'Add commit-amend-demo.txt'
+```
+
+![p11](img/11.png)
+
+- Thay đổi nội dung file `commit-amend-demo.txt`
+
+![p12](img/12.png)
+
+- Sử dụng `git commit --amend`
+
+```bash
+git add commit-amend-demo.txt
+git commit --amend
+```
+
+> Result
+
+![p13](img/13.png)
+
+![p14](img/14.png)
+
 ## 7. Làm việc với cherry-pick
 
 ```bash
