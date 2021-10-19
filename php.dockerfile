@@ -1,5 +1,6 @@
-FROM php:8.0-fpm
+FROM php:7.2-fpm
 
-RUN cd /var/www
+# RUN cd /var/www
+# COPY ./src /var/www/docker-demo
 
-COPY ./src /var/www/docker-demo
+RUN docker-php-ext-install mysqli
