@@ -34,3 +34,8 @@ services:
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - 8025:8025
