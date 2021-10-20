@@ -67,6 +67,6 @@ Result
 
 ![5](img/5.png)
 
-MailHog
+MailHog: http://localhost:8025
 
 ![6](img/6.png)
