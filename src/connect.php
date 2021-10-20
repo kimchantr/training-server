@@ -3,6 +3,8 @@ $host = "mysql";
 $username = "root";
 $password = getenv('MYSQL_ROOT_PASSWORD');
 
+require_once('./mail.php');
+
 // Create connection
 $conn = new mysqli($host, $username, $password);
 // Check connection
@@ -31,6 +33,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
     $emailTrim = trim($email);
     $sql = "INSERT INTO contact (email) VALUES ('$emailTrim')";
     $conn->query($sql);
+
+    sendMail($emailTrim);
   }
 
   // show data from `contact` table

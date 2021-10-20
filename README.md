@@ -66,3 +66,7 @@ Enter email list
 Result
 
 ![5](img/5.png)
+
+MailHog
+
+![6](img/6.png)
